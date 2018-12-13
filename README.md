@@ -1,2 +1,7 @@
 # MyProgs
-Here you can see what i coding
+
+
+
+# Life.cpp
+Test it online:
+https://repl.it/@Allespro/GameOfLife-Russian-edition
