@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
 	int sluchay;
-	
 	bool kaska, metla, kist, ucheb, komp;
 	kaska = metla = kist = false;
 	string predm;
@@ -124,43 +123,77 @@ int main()
     
     if(vibr == 1){
 		
-		if(money < 15){system ("clear");cout << "Не хватает денег";goto shop;} 
+		if(money < 15){
+			system ("clear");cout << "Не хватает денег";
+			goto shop;
+		} 
 		system ("clear");cout << "Ты купил хлеб\n"; money -= 15; life += 20;
 		goto start;
 		}
 	if(vibr == 2){
 		
-		if(money < 10){system ("clear");cout << "Не хватает денег";goto shop;}
+		if(money < 10){
+			system ("clear");cout << "Не хватает денег";
+			goto shop;
+		}
 		system ("clear");cout << "Ты купил сухарики\n"; money -= 10; life += 5;
 		goto start;
 		}
     if(vibr == 3){
 		
-		if(money < 20){system ("clear");cout << "Не хватает денег";goto shop;}
+		if(money < 20){
+			system ("clear");cout << "Не хватает денег";
+			goto shop;
+		}
 		system ("clear");cout << "Ты купил воду\n"; money -= 20; life += 25;
 		goto start;
 		}
     if(vibr == 4){
 		
-		if(money < 100){system ("clear");cout << "Не хватает денег";goto shop;}
-		system ("clear");cout << "Ты купил витамины\n"; money -=100; life +=100;
+		if(money < 100){
+			system ("clear");
+			cout << "Не хватает денег";
+			goto shop;
+		}
+		system ("clear");
+	    cout << "Ты купил витамины\n";
+	    money -=100;
+	    life +=100;
 		goto start;
 		}
     if(vibr == 5){
 		
-		if(money < 5){system ("clear");cout << "Не хватает денег";goto shop;}
+		if(money < 5)
+		{
+			system ("clear");
+			cout << "Не хватает денег";
+			goto shop;
+		}
 		system ("clear");cout << "Ты купил горбушку хлеба\n"; money -= 5; life += 5;
 		goto start;
 		}
 		
 	if(vibr == 6){
 		
-		if(money < 300){system ("clear");cout << "Не хватает денег";goto shop;}
-		system ("clear");cout << "Ты купил элексир добавления силы\n"; money -= 300; maxlife += 20;
+		if(money < 300)
+		{
+			system ("clear");
+			cout << "Не хватает денег";
+			goto shop;
+		}
+		system ("clear");
+		cout << "Ты купил элексир добавления силы\n";
+		money -= 300;
+		maxlife += 20;
 		goto start;
 		}
 		
-    else {cout << "Ты ввёл не то число, повтори ввод\n";system ("clear");goto shop;}
+    else 
+    {
+	    cout << "Ты ввёл не то число, повтори ввод\n";
+	    system ("clear");
+	    goto shop;
+    }
     
     street:;
     int chanse;
@@ -168,8 +201,19 @@ int main()
     srand(time(NULL));
     chanse = 1 + rand() % 4;
     chansemoney = 1 + rand() % 50;
-    if (chanse > 2) {system ("clear"); cout << "Тебе повезло, ты заработал " << chansemoney << " рублей!!!\nТы потерял 5 силы\n\n"; money += chansemoney; life -= 5;  goto start;}
-    else {system ("clear"); cout << "Тебя побили и отобрали " << chansemoney << " рублей!!!\nТы потерял 15 силы\n\n"; money -= chansemoney; life -= 15; goto start;}
+    if (chanse > 2) {
+	    system ("clear");
+	    cout << "Тебе повезло, ты заработал " << chansemoney << " рублей!!!\nТы потерял 5 силы\n\n";
+	    money += chansemoney;
+	    life -= 5;
+	    goto start;
+    }
+    else {
+	    system ("clear");
+	    cout << "Тебя побили и отобрали " << chansemoney << " рублей!!!\nТы потерял 15 силы\n\n";
+	    money -= chansemoney;
+	    life -= 15; goto start;
+    }
     
     workshop:;
     system ("clear");
@@ -186,23 +230,63 @@ int main()
     
      if(vibr == 1){
 		
-		if(money < 100){system ("clear");cout << "Не хватает денег";goto workshop;}
-		if(metla == true){system ("clear");cout << "Метла уже была куплена\n";goto workshop;}
-		system ("clear");cout << "Ты купил метлу\n"; money -= 100; metla = true; predm = predm + "\n		Метла\n";
+		if(money < 100)
+		{
+			system ("clear");
+			cout << "Не хватает денег";
+			goto workshop;
+		}
+		if(metla == true)
+		{
+			system ("clear");
+			cout << "Метла уже была куплена\n";
+			goto workshop;
+		}
+		system ("clear");
+	     cout << "Ты купил метлу\n";
+	     money -= 100;
+	     metla = true;
+	     predm = predm + "\n		Метла\n";
 		goto start;
 		}
 		
 	if(vibr == 2){
-		if(money < 300){system ("clear");cout << "Не хватает денег";goto workshop;}
-		if(kaska == true){system ("clear");cout << "Каска уже была куплена\n";goto workshop;}
-		system ("clear");cout << "Ты купил каску\n"; money -=300; kaska = true; predm = predm + "\n		Каска\n";
+		if(money < 300)
+		{
+			system ("clear");
+			cout << "Не хватает денег";
+			goto workshop;
+		}
+		if(kaska == true){
+			system ("clear");
+			cout << "Каска уже была куплена\n";
+			goto workshop;
+		}
+		system ("clear");cout << "Ты купил каску\n";
+		money -=300;
+		kaska = true;
+		predm = predm + "\n		Каска\n";
 		goto start;
 		}
 		
 	if(vibr == 3){
-		if(money < 70){system ("clear");cout << "Не хватает денег";goto workshop;}
-		if(kist == true){system ("clear");cout << "Кисть уже была куплена\n";goto workshop;}
-		system ("clear");cout << "Ты купил кисть\n"; money -= 70; kist = true; predm = predm + "\n		Кисть\n";
+		if(money < 70)
+		{
+			system ("clear");
+			cout << "Не хватает денег";
+			goto workshop;
+		}
+		if(kist == true)
+		{
+			system ("clear");
+			cout << "Кисть уже была куплена\n";
+			goto workshop;
+		}
+		system ("clear");
+		cout << "Ты купил кисть\n";
+		money -= 70;
+		kist = true;
+		predm = predm + "\n		Кисть\n";
 		goto start;
 		}
 		
