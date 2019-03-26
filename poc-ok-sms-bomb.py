@@ -1,6 +1,7 @@
 #!usr/bin/python
 # SMS BOMBER SCRIPT
 # By : Allespro
+# https://vimeo.com/326533284
  
 import sys
 import random
