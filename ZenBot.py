@@ -1,4 +1,3 @@
-# python3
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -30,10 +29,10 @@ By Allespro
 def open_web(link, proxy_str):
 	try:
 		chrome_options = webdriver.ChromeOptions()
-		#chrome_options.add_argument("--start-maximized")
-		#chrome_options.add_argument('--headless')
+		chrome_options.add_argument("--start-maximized")
+		chrome_options.add_argument('headless')
 		chrome_options.add_argument('--proxy-server=http://' + proxy_str)
-		chrome = webdriver.Chrome(chrome_options=chrome_options)
+		chrome = webdriver.Chrome(options=chrome_options)
 		wait = WebDriverWait(chrome, 5)
 		chrome.get(link)
 		wait.until(EC.visibility_of_element_located((By.ID, "text")))
@@ -49,7 +48,7 @@ def open_web(link, proxy_str):
 
 
 def main():
-	proxy_file = "proxy.list" #input("Пожалйста введите файл со списком пркси: ")
+	proxy_file = input("Пожалйста введите файл со списком пркси: ")
 	zen_graph = input("Введите ссылку на статью: ") #"http://2ip.ru" # 
 	f = open(proxy_file)
 	line = f.readline()
