@@ -17,6 +17,7 @@ by Allespro
 inp = input("Choose your number/Выбери походящее число: ")
 choice = {"1":(3,5),"2":(5,4)}
 try:
+    choice[inp]
     inpA = int(input("How many times to write down the keys?/Сколько ключей сгенерировать?: "))
     f = open("Keys.txt" or "keys.txt" or "key.txt", "w")
     for i in range(1,inpA+1):
